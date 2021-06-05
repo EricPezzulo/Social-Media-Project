@@ -1,36 +1,55 @@
 import "./Post.css";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-
-function Post() {
+import { Users } from "../../dummyData";
+import { useState } from "react";
+function Post({ post }) {
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+  const likeHandler = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
             <img
-              src="/assets/people/6.jpeg"
+              src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
               alt=""
               className="postProfileImg"
             />
-            <span className="postUsername">UserName</span>
-            <span className="postDate">5 mins ago</span>
+            <span className="postUsername">
+              {Users.filter((u) => u.id === post?.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVertIcon />
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">Hey its my first post!</span>
-          <img src="/assets/post/1.jpeg" alt="" className="postImg" />
+          <span className="postText">{post?.desc}</span>
+          <img src={post.photo} alt="" className="postImg" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img src="/assets/like.png" alt="" className="postLikeIcon" />
-            <img src="/assets/heart.png" alt="" className="postLikeIcon" />
-            <span className="postLikeCounter">78 people like this</span>
+            <img
+              src="/assets/like.png"
+              alt=""
+              onClick={likeHandler}
+              className="postLikeIcon"
+            />
+            <img
+              src="/assets/heart.png"
+              alt=""
+              onClick={likeHandler}
+              className="postLikeIcon"
+            />
+            <span className="postLikeCounter">{like} people like this</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">23 comments</span>
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </div>
       </div>
