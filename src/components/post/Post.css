@@ -21,6 +21,7 @@
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
+  cursor: pointer;
 }
 .postCenter {
   margin: 20px 0;
@@ -29,6 +30,7 @@
   font-size: 15px;
   font-weight: 500;
   margin: 0px 10px;
+  cursor: pointer;
 }
 .postDate {
   font-size: 12px;

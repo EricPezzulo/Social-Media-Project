@@ -18,7 +18,7 @@ export default function Rightbar({ profile }) {
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendsList">
           {Users.map((u) => (
-            <Online key={u.id} user={u} />
+            <Online className="rightbarFriend" key={u.id} user={u} />
           ))}
         </ul>
       </>

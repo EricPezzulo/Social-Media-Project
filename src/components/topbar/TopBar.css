@@ -16,6 +16,9 @@
   color: white;
   cursor: pointer;
 }
+.backToHome {
+  text-decoration: none;
+}
 .searchbar {
   width: 100%;
   height: 30px;
