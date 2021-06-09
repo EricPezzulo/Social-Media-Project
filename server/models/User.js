@@ -11,15 +11,14 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      require: true,
+      required: true,
       max: 50,
       unique: true,
     },
     password: {
       type: String,
-      require: true,
+      required: true,
       min: 6,
-      max: 20,
     },
     profilePicture: {
       type: String,
@@ -33,7 +32,7 @@ const UserSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    following: {
+    followings: {
       type: Array,
       default: [],
     },
@@ -43,7 +42,7 @@ const UserSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      max: 180,
+      max: 50,
     },
     city: {
       type: String,

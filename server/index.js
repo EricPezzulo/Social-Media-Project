@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3001;
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
