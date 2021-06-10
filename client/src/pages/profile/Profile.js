@@ -4,8 +4,8 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TopBar from "../../components/topbar/TopBar";
 import "./Profile.css";
-
 function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <>
       <TopBar />
@@ -15,19 +15,19 @@ function Profile() {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src="./assets/post/3.jpeg"
+                src={`${PF}post/3.jpeg`}
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src="assets/people/8.jpeg"
+                src={`${PF}people/7.jpeg`}
                 alt=""
                 className="profileUserImg"
               />
             </div>
           </div>
           <div className="profileInfo">
-            <h4 className="profileInfoName">Name</h4>
+            <h4 className="profileInfoName">username</h4>
             <div className="span profileInfoDesc">Hello freinds!</div>
           </div>
           <div className="profileRightBottom">
